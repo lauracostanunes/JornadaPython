@@ -5,6 +5,7 @@
 import pyautogui
 import time
 
+# pyautogui -> fazer automações com Python
 # pyautogui.write -> escrever um texto
 # pyautogui.press -> apertar 1 tecla
 # pyautogui.click -> clicar em algum lugar da tela
