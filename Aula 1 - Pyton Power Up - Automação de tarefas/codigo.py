@@ -55,14 +55,14 @@ for linha in tabela.index:
     pyautogui.press("tab")
     pyautogui.write(str(tabela.loc[linha, "tipo"]))
     pyautogui.press("tab")
-    pyautogui.write(str(tabela.loc[linha, "categoria"]))
+    pyautogui.write(str(tabela.loc[linha, "categoria"])) #str = transformar em string (texto)
     pyautogui.press("tab")
     pyautogui.write(str(tabela.loc[linha, "preco_unitario"]))
     pyautogui.press("tab")
     pyautogui.write(str(tabela.loc[linha, "custo"]))
     pyautogui.press("tab")
-    obs = tabela.loc[linha, "obs"]
-    if not pd.isna(obs):
+    obs = tabela.loc[linha, "obs"] 
+    if not pd.isna(obs): # só escrever algo nesse campo caso haja obs
         pyautogui.write(str(tabela.loc[linha, "obs"]))
     pyautogui.press("tab")
     pyautogui.press("enter") # cadastrar o produto (botão enviar)
@@ -70,3 +70,7 @@ for linha in tabela.index:
     pyautogui.scroll(5000)
     # Passo 5: Repetir o processo de cadastro até o fim
     # identação (margem dentro do for, por exemplo) = selecionar o código e apertar tab
+    # lista no python é entre colchetes
+    # pausar automação: colocar mouse no canto superior esquerdo
+    # Nan = not a number
+    # != : diferente
