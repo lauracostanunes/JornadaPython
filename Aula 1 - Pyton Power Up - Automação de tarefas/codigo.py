@@ -31,7 +31,7 @@ pyautogui.write("pythonimpressionador@gmail.com")
 pyautogui.press("tab") # passando para o próximo campo
 pyautogui.write("senha")
 pyautogui.click(x=955, y=638) # clicar no botao de login
-time.sleep(3)
+time.sleep(3) # garantia caso a internet esteja lenta
 
 # Passo 3: Importar a base de produtos pra cadastrar
 import pandas as pd
@@ -65,7 +65,8 @@ for linha in tabela.index:
     if not pd.isna(obs):
         pyautogui.write(str(tabela.loc[linha, "obs"]))
     pyautogui.press("tab")
-    pyautogui.press("enter") # cadastra o produto (botao enviar)
-    # dar scroll de tudo pra cima
+    pyautogui.press("enter") # cadastrar o produto (botão enviar)
+    # dar scroll (+ = para cima; - = para baixo)
     pyautogui.scroll(5000)
     # Passo 5: Repetir o processo de cadastro até o fim
+    # identação (margem dentro do for, por exemplo) = selecionar o código e apertar tab
