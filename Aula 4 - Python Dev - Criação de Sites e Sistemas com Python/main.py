@@ -48,7 +48,7 @@ if mensagem_usuario:
         model="gpt-4o"
     )
     
-    resposta_ia = resposta_modelo.choices[0].message.content
+    resposta_ia = resposta_modelo.choices[0].message.content # Primeiro elemento da lista
 
     # exibir a resposta da IA na tela
     st.chat_message("assistant").write(resposta_ia)
