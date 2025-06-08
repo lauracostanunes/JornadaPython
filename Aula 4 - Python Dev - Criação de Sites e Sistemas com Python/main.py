@@ -12,9 +12,12 @@ from openai import OpenAI
 
 modelo = OpenAI(api_key="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")
 
-st.write("### ChatBot com IA") # markdown
+st.write("### ChatBot com IA") # markdown: permite alterações na formatação
+# 1# = H1
+# 2# = H2
+# 3# = H3
 
-# session_state = memoria do streamlit
+# session_state = memoria do streamlit -> É um dicionário
 if not "lista_mensagens" in st.session_state:
     st.session_state["lista_mensagens"] = []
 
@@ -22,7 +25,7 @@ if not "lista_mensagens" in st.session_state:
 # st.session_state["lista_mensagens"].append(mensagem)
 
 # exibir o histórico de mensagens
-for mensagem in st.session_state["lista_mensagens"]:
+for mensagem in st.session_state["lista_mensagens"]: 
     role = mensagem["role"]
     content = mensagem["content"]
     st.chat_message(role).write(content)
@@ -33,6 +36,9 @@ if mensagem_usuario:
     # user -> ser humano
     # assistant -> inteligencia artificial
     st.chat_message("user").write(mensagem_usuario)
+    # chat_input = Escrita clara de "Escreva o texto aqui"
+    # chat_message = Balãozinho
+
     mensagem = {"role": "user", "content": mensagem_usuario}
     st.session_state["lista_mensagens"].append(mensagem)
 
@@ -48,5 +54,3 @@ if mensagem_usuario:
     st.chat_message("assistant").write(resposta_ia)
     mensagem_ia = {"role": "assistant", "content": resposta_ia}
     st.session_state["lista_mensagens"].append(mensagem_ia)
-
-

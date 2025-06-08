@@ -24,6 +24,7 @@ lista_mensagens = [
     {"role": "assistant", "content": "Resposta da IA"}, 
     {"role": "user", "content": "Tamo junto"}
     ]
+# Quem enviou a mensagem + mensagem
 
 lista_mensagens.append(
     {"role": "assistant", "content": "Eu desisto de você"}
